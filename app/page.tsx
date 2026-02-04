@@ -52,7 +52,7 @@ export default function Home() {
                 </div>
               </div>
               <span className="text-base md:text-xl font-black tracking-tighter">
-                APOLLO <span className="text-[#ba181b]">TATTOO</span>
+                APOLLO <span className="text-[#ba181]">TATTOO</span>
               </span>
             </div>
 
