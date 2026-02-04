@@ -8,7 +8,7 @@ export default function Home() {
   const [activeImage, setActiveImage] = useState(0)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  // Imagens da galeria - CORRIGIDO: removido "public/" dos caminhos
+  // Imagens da galeria
   const galleryImages = [
     '/imagens/tattoos/galeria_foto_01.png',
     '/imagens/tattoos/galeria_foto_02.png',
@@ -52,7 +52,7 @@ export default function Home() {
                 </div>
               </div>
               <span className="text-base md:text-xl font-black tracking-tighter">
-                APOLLO <span className="text-[#ba181]">TATTOO</span>
+                APOLLO <span className="text-[#ba181b]">TATTOO</span>
               </span>
             </div>
 
@@ -110,29 +110,55 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section with Video Background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
-        {/* Background with animated pattern */}
+        {/* Video Background */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0a0908] via-[#161a1d] to-[#0a0908]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#640d14]/20 via-transparent to-transparent"></div>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/videos/000.mp4" type="video/mp4" />
+          </video>
+          
+          {/* Overlay escuro com gradiente para melhor legibilidade */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0908]/80 via-[#0a0908]/70 to-[#0a0908]/90"></div>
+          
+          {/* Overlay com efeito de vinheta */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(10,9,8,0.4)_100%)]"></div>
+          
+          {/* Overlay com gradiente vermelho sutil */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#640d14]/10 via-transparent to-transparent"></div>
+          
+          {/* Pattern overlay sutil */}
           <div className="absolute inset-0 opacity-5">
             <div className="absolute inset-0" style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e5e5e5' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
             }}></div>
           </div>
+          
+          {/* Linha decorativa superior */}
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#640d14] to-transparent"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12 md:py-20">
           <div className="animate-fade-in-up">
+            {/* Badge decorativo */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#640d14]/30 backdrop-blur-md border border-[#ba181b]/30 mb-6 md:mb-8">
+              <div className="w-2 h-2 bg-[#ba181b] rounded-full animate-pulse"></div>
+              <span className="text-[#e5e5e5]/80 text-xs md:text-sm font-medium tracking-wider">ESTÚDIO PROFISSIONAL</span>
+            </div>
+
             <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-4 md:mb-6 tracking-tighter leading-tight">
               <span className="block text-[#e5e5e5] drop-shadow-2xl">APOLLO</span>
               <span className="block bg-gradient-to-r from-[#640d14] via-[#ba181b] to-[#640d14] bg-clip-text text-transparent drop-shadow-2xl">
                 TATTOO
               </span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-6 md:mb-8 text-[#e5e5e5]/70 tracking-wide max-w-3xl mx-auto animate-fade-in-up px-4" style={{ animationDelay: '0.2s' }}>
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-6 md:mb-8 text-[#e5e5e5]/90 tracking-wide max-w-3xl mx-auto animate-fade-in-up px-4" style={{ animationDelay: '0.2s' }}>
               TATUAGENS PROJETADAS 
               <span className="block mt-2 font-bold text-[#ba181b]"> E BEM EXECUTADAS</span>
             </p>
@@ -161,7 +187,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gallery Section - ATUALIZADA COM CARROSSEL HORIZONTAL */}
+      {/* Gallery Section */}
       <section id="galeria" className="py-12 md:py-20 lg:py-24 bg-[#0a0908] relative">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#640d14] to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
