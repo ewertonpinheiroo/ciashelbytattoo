@@ -165,82 +165,94 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section with Video Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
-        {/* Video Background */}
-        <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/videos/000.mp4" type="video/mp4" />
-          </video>
-          
-          {/* Overlay escuro com gradiente para melhor legibilidade */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0908]/80 via-[#0a0908]/70 to-[#0a0908]/90"></div>
-          
-          {/* Overlay com efeito de vinheta */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(10,9,8,0.4)_100%)]"></div>
-          
-          {/* Overlay com gradiente vermelho sutil */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#640d14]/10 via-transparent to-transparent"></div>
-          
-          {/* Pattern overlay sutil */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e5e5e5' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-            }}></div>
-          </div>
-          
-          {/* Linha decorativa superior */}
-          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#640d14] to-transparent"></div>
+ {/* Hero Section with Video Background - Versão Atualizada com Logo Grande */}
+<section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
+  {/* Video Background */}
+  <div className="absolute inset-0 z-0">
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="absolute inset-0 w-full h-full object-cover"
+    >
+      <source src="/videos/000.mp4" type="video/mp4" />
+    </video>
+
+    {/* Overlay ajustado: menos escuro para destacar as cores/tatuagens do vídeo */}
+    <div className="absolute inset-0 bg-gradient-to-b from-[#0a0908]/60 via-[#0a0908]/45 to-[#0a0908]/65"></div>
+
+    {/* Vinheta mais suave */}
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(10,9,8,0.25)_100%)]"></div>
+
+    {/* Gradiente vermelho sutil mantido, mas mais leve */}
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#640d14]/8 via-transparent to-transparent"></div>
+
+    {/* Pattern overlay sutil (mantido baixo para não competir com o vídeo) */}
+    <div className="absolute inset-0 opacity-[0.04]">
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e5e5e5' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
+    </div>
+
+    {/* Linha decorativa superior */}
+    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#640d14] to-transparent"></div>
+  </div>
+
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12 md:py-20 flex flex-col items-center justify-center h-full">
+    <div className="animate-fade-in-up w-full max-w-5xl">
+      {/* Badge decorativo (mantido no topo) */}
+      <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#640d14]/35 backdrop-blur-lg border border-[#ba181b]/40 mb-8 md:mb-12 shadow-lg">
+        <div className="w-2.5 h-2.5 bg-[#ba181b] rounded-full animate-pulse"></div>
+        <span className="text-[#e5e5e5]/90 text-sm md:text-base font-semibold tracking-widest uppercase">ESTÚDIO PROFISSIONAL</span>
+      </div>
+
+      {/* Logo principal - grande, centralizada e elegante */}
+      <div className="relative mb-10 md:mb-16">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#ba181b]/20 via-transparent to-[#640d14]/10 rounded-full blur-3xl opacity-60 animate-pulse-slow"></div>
+        
+        <div className="relative">
+          <Image
+            src="/imagens/apollologo.png"
+            alt="Apollo Tattoo - Logo Principal"
+            width={1200}          // ajuste se sua logo for muito larga/quadrada
+            height={400}          // mantenha proporção real da sua logo (ex: se for 3:1, use width maior)
+            className="mx-auto w-[85%] sm:w-[75%] md:w-[65%] lg:w-[55%] xl:w-[50%] drop-shadow-2xl transition-all duration-700 hover:scale-[1.03]"
+            priority
+            sizes="(max-width: 640px) 85vw, (max-width: 1024px) 75vw, 55vw"
+          />
         </div>
+      </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12 md:py-20">
-          <div className="animate-fade-in-up">
-            {/* Badge decorativo */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#640d14]/30 backdrop-blur-md border border-[#ba181b]/30 mb-6 md:mb-8">
-              <div className="w-2 h-2 bg-[#ba181b] rounded-full animate-pulse"></div>
-              <span className="text-[#e5e5e5]/80 text-xs md:text-sm font-medium tracking-wider">ESTÚDIO PROFISSIONAL</span>
-            </div>
+      {/* Subtítulo / slogan curto abaixo da logo (opcional, mas ajuda SEO e reforça a marca) */}
+      <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light mb-10 md:mb-14 text-[#e5e5e5]/90 tracking-wide max-w-4xl mx-auto leading-relaxed">
+        Tatuagens projetadas com precisão e executadas com excelência
+      </p>
 
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-4 md:mb-6 tracking-tighter leading-tight">
-              <span className="block text-[#e5e5e5] drop-shadow-2xl">APOLLO</span>
-              <span className="block bg-gradient-to-r from-[#640d14] via-[#ba181b] to-[#640d14] bg-clip-text text-transparent drop-shadow-2xl">
-                TATTOO
-              </span>
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light mb-6 md:mb-8 text-[#e5e5e5]/90 tracking-wide max-w-3xl mx-auto animate-fade-in-up px-4" style={{ animationDelay: '0.2s' }}>
-              TATUAGENS PROJETADAS 
-              <span className="block mt-2 font-bold text-[#ba181b]"> E BEM EXECUTADAS</span>
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center animate-fade-in-up px-4" style={{ animationDelay: '0.4s' }}>
-              <a
-                href="#galeria"
-                className="w-full sm:w-auto bg-gradient-to-r from-[#640d14] to-[#ba181b] hover:from-[#ba181b] hover:to-[#640d14] text-[#e5e5e5] px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-lg tracking-wide transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-[#640d14]/50 border border-[#ba181b]/50"
-              >
-                VER TRABALHOS
-              </a>
-              <a
-                href="#agendar"
-                className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-lg tracking-wide transition-all duration-300 transform hover:scale-105 border-2 border-[#640d14] hover:bg-[#640d14]/20 backdrop-blur-sm"
-              >
-                AGENDAR AGORA
-              </a>
-            </div>
-          </div>
+      {/* Botões CTA - mantidos, mas com espaçamento melhor */}
+      <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center animate-fade-in-up">
+        <a
+          href="#galeria"
+          className="w-full sm:w-auto bg-gradient-to-r from-[#640d14] to-[#ba181b] hover:from-[#ba181b] hover:to-[#640d14] text-[#e5e5e5] px-10 md:px-12 py-5 md:py-6 rounded-full font-bold text-lg md:text-xl tracking-wide transition-all duration-400 transform hover:scale-105 shadow-xl hover:shadow-[#ba181b]/40 border border-[#ba181b]/60"
+        >
+          VER GALERIA DE TRABALHOS
+        </a>
+        <a
+          href="#agendar"
+          className="w-full sm:w-auto px-10 md:px-12 py-5 md:py-6 rounded-full font-bold text-lg md:text-xl tracking-wide transition-all duration-400 transform hover:scale-105 border-2 border-[#ba181b] hover:bg-[#ba181b]/10 backdrop-blur-sm text-[#e5e5e5]"
+        >
+          AGENDAR AGORA
+        </a>
+      </div>
+    </div>
 
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-6 md:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow hidden md:block">
-            <div className="w-6 h-10 border-2 border-[#640d14] rounded-full flex justify-center p-2">
-              <div className="w-1 h-3 bg-[#640d14] rounded-full"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+    {/* Scroll Indicator - mantido */}
+   
+  </div>
+</section>
 
       {/* Gallery Section - REFORMULADA COM GRID PROFISSIONAL */}
       <section id="galeria" className="py-12 md:py-20 lg:py-24 bg-[#0a0908] relative">
@@ -396,110 +408,166 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#640d14] to-transparent"></div>
       </section>
 
-      {/* Agendar Section */}
-      <section id="agendar" className="py-12 md:py-20 lg:py-24 bg-[#0a0908] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 md:mb-12 lg:mb-16 animate-fade-in-up">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 tracking-tight">
-              <span className="text-[#e5e5e5]">AGENDE SUA </span>
-              <span className="text-[#ba181b]">TATTOO</span>
+      {/* Agendar Section - REFORMULADA */}
+      <section id="agendar" className="py-12 md:py-20 lg:py-24 bg-gradient-to-b from-[#0a0908] via-[#640d14]/10 to-[#0a0908] relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ba181b' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Hero Title */}
+          <div className="text-center mb-10 md:mb-16 animate-fade-in-up">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#640d14]/30 backdrop-blur-md border border-[#ba181b]/30 mb-6">
+              <div className="w-2 h-2 bg-[#ba181b] rounded-full animate-pulse"></div>
+              <span className="text-[#e5e5e5]/80 text-xs md:text-sm font-medium tracking-wider">ATENDIMENTO RÁPIDO</span>
+            </div>
+            
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight">
+              <span className="text-[#e5e5e5]">FAÇA SEU </span>
+              <span className="block text-[#ba181b] mt-2">ORÇAMENTO</span>
             </h2>
-            <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-transparent via-[#640d14] to-transparent mx-auto mb-3 md:mb-4"></div>
-            <p className="text-[#e5e5e5]/70 text-base md:text-lg max-w-2xl mx-auto px-4">
-              Entre em contato e transforme sua ideia em realidade
+            
+            <p className="text-lg md:text-2xl text-[#e5e5e5]/80 max-w-3xl mx-auto font-light leading-relaxed">
+              Entre em contato agora e transforme sua ideia em arte
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-5xl mx-auto">
-            {/* Contact Info Cards */}
-            <div className="space-y-4 md:space-y-6 animate-fade-in-left">
-              <div className="bg-[#640d14] p-6 md:p-8 rounded-2xl border border-[#ba181b]/30 hover:border-[#ba181b] transition-all group">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 md:w-14 md:h-14 bg-[#ba181b]/20 rounded-full flex items-center justify-center flex-shrink-0 border border-[#ba181b] group-hover:bg-[#ba181b] transition-colors">
-                    <svg className="w-6 h-6 md:w-7 md:h-7 text-[#e5e5e5] group-hover:text-[#0a0908] transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                    </svg>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl font-bold text-[#e5e5e5] mb-2">WhatsApp</h3>
-                    <p className="text-[#e5e5e5]/70 text-sm md:text-base break-words">(92) 98528-3893</p>
-                    <a 
-                      href="https://wa.me/5592985283893" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-block mt-3 text-[#ba181b] hover:text-[#ba181b]/80 transition-colors text-sm md:text-base font-medium"
-                    >
-                      Enviar mensagem →
-                    </a>
-                  </div>
-                </div>
-              </div>
+          {/* Main CTA Card */}
+          <div className="max-w-4xl mx-auto mb-12 md:mb-16 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <div className="relative group">
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#640d14] via-[#ba181b] to-[#640d14] rounded-3xl blur-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
+              
+              {/* Main Card */}
+              <div className="relative bg-gradient-to-br from-[#640d14] to-[#ba181b] p-1 rounded-3xl">
+                <div className="bg-[#0a0908] rounded-3xl p-8 md:p-12 lg:p-16">
+                  <div className="text-center">
+                    {/* WhatsApp Icon */}
+                    <div className="inline-flex items-center justify-center w-20 h-20 md:w-28 md:h-28 bg-gradient-to-br from-green-500 to-green-600 rounded-full mb-6 md:mb-8 shadow-2xl shadow-green-500/50 transform group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-10 h-10 md:w-14 md:h-14 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                      </svg>
+                    </div>
 
-              <div className="bg-[#640d14] p-6 md:p-8 rounded-2xl border border-[#ba181b]/30 hover:border-[#ba181b] transition-all group">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 md:w-14 md:h-14 bg-[#ba181b]/20 rounded-full flex items-center justify-center flex-shrink-0 border border-[#ba181b] group-hover:bg-[#ba181b] transition-colors">
-                    <svg className="w-6 h-6 md:w-7 md:h-7 text-[#e5e5e5] group-hover:text-[#0a0908] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl font-bold text-[#e5e5e5] mb-2">Horário</h3>
-                    <p className="text-[#e5e5e5]/70 text-sm md:text-base">Segunda a Sexta: 10h - 20h</p>
-                    <p className="text-[#e5e5e5]/70 text-sm md:text-base">Sábado: 10h - 18h</p>
-                    <p className="text-[#e5e5e5]/70 text-sm md:text-base">Domingo: Fechado</p>
-                  </div>
-                </div>
-              </div>
+                    <h3 className="text-2xl md:text-4xl font-black text-[#e5e5e5] mb-4">
+                      FALE DIRETO COM O TATUADOR
+                    </h3>
+                    
+                    <p className="text-base md:text-xl text-[#e5e5e5]/70 mb-8 max-w-2xl mx-auto leading-relaxed">
+                      Tire suas dúvidas, envie referências e receba um orçamento personalizado em minutos
+                    </p>
 
-              <div className="bg-[#640d14] p-6 md:p-8 rounded-2xl border border-[#ba181b]/30 hover:border-[#ba181b] transition-all group">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 md:w-14 md:h-14 bg-[#ba181b]/20 rounded-full flex items-center justify-center flex-shrink-0 border border-[#ba181b] group-hover:bg-[#ba181b] transition-colors">
-                    <svg className="w-6 h-6 md:w-7 md:h-7 text-[#e5e5e5] group-hover:text-[#0a0908] transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl font-bold text-[#e5e5e5] mb-2">Instagram</h3>
-                    <p className="text-[#e5e5e5]/70 text-sm md:text-base break-words">@apollotattoo</p>
-                    <a 
-                      href="https://instagram.com/apollotattoo" 
-                      target="_blank" 
+                    {/* Número WhatsApp em Destaque */}
+                    <div className="inline-flex items-center gap-3 bg-[#640d14]/50 backdrop-blur-sm border-2 border-[#ba181b]/50 rounded-2xl px-6 md:px-8 py-4 mb-8">
+                      <svg className="w-6 h-6 md:w-8 md:h-8 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                      </svg>
+                      <span className="text-2xl md:text-3xl font-black text-[#e5e5e5]">(92) 98528-3893</span>
+                    </div>
+
+                    {/* CTA Button */}
+                    <a
+                      href="https://wa.me/5592985283893"
+                      target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block mt-3 text-[#ba181b] hover:text-[#ba181b]/80 transition-colors text-sm md:text-base font-medium"
+                      className="inline-flex items-center gap-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 md:px-14 py-5 md:py-7 rounded-full font-black text-lg md:text-2xl tracking-wide transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-green-500/50 border-2 border-green-400"
                     >
-                      Seguir perfil →
+                      <svg className="w-7 h-7 md:w-9 md:h-9" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                      </svg>
+                      FAZER ORÇAMENTO AGORA
                     </a>
+
+                    {/* Trust Badges */}
+                    <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-8 pt-8 border-t border-[#ba181b]/30">
+                      <div className="flex items-center gap-2 text-[#e5e5e5]/70">
+                        <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-sm md:text-base font-medium">Resposta rápida</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-[#e5e5e5]/70">
+                        <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-sm md:text-base font-medium">Orçamento grátis</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-[#e5e5e5]/70">
+                        <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-sm md:text-base font-medium">Sem compromisso</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* CTA Card */}
-            <div className="animate-fade-in-right">
-              <div className="relative h-full group">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#640d14] to-[#ba181b] rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                <div className="relative h-full bg-[#640d14] p-8 md:p-12 rounded-2xl border-2 border-[#ba181b] flex flex-col justify-center items-center text-center">
-                  <div className="w-20 h-20 md:w-24 md:h-24 bg-[#ba181b]/20 rounded-full flex items-center justify-center mb-6 md:mb-8 border-2 border-[#ba181b] group-hover:scale-110 transition-transform">
-                    <svg className="w-10 h-10 md:w-12 md:h-12 text-[#e5e5e5]" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-black text-[#e5e5e5] mb-3 md:mb-4">Pronto para começar?</h3>
-                  <p className="text-[#e5e5e5]/70 text-base md:text-lg mb-6 md:mb-8 px-4">
-                    Entre em contato agora e agende sua sessão. Estamos prontos para criar algo incrível!
-                  </p>
-                  <a
-                    href="https://wa.me/5592985283893"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 bg-gradient-to-r from-[#ba181b] to-[#640d14] hover:from-[#640d14] hover:to-[#ba181b] text-[#e5e5e5] px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-lg tracking-wide transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-[#640d14]/50 border border-[#ba181b]/50"
-                  >
-                    <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                    </svg>
-                    AGENDAR AGORA
-                  </a>
+          {/* Secondary Info Cards */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
+            {/* Horário */}
+            <div className="bg-[#640d14]/50 backdrop-blur-sm border border-[#ba181b]/30 rounded-2xl p-6 hover:border-[#ba181b] transition-all group animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-14 h-14 bg-[#ba181b]/20 rounded-full flex items-center justify-center mb-4 border border-[#ba181b] group-hover:bg-[#ba181b] transition-colors">
+                  <svg className="w-7 h-7 text-[#e5e5e5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                 </div>
+                <h3 className="text-lg font-bold text-[#e5e5e5] mb-3">HORÁRIO</h3>
+                <p className="text-[#e5e5e5]/70 text-sm leading-relaxed">
+                  Seg-Sex: 10h-20h<br />
+                  Sáb: 10h-18h<br />
+                  Dom: Fechado
+                </p>
+              </div>
+            </div>
+
+            {/* Instagram */}
+            <div className="bg-[#640d14]/50 backdrop-blur-sm border border-[#ba181b]/30 rounded-2xl p-6 hover:border-[#ba181b] transition-all group animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-14 h-14 bg-[#ba181b]/20 rounded-full flex items-center justify-center mb-4 border border-[#ba181b] group-hover:bg-[#ba181b] transition-colors">
+                  <svg className="w-7 h-7 text-[#e5e5e5]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-[#e5e5e5] mb-3">INSTAGRAM</h3>
+                <p className="text-[#e5e5e5]/70 text-sm mb-3">@apollotattoo</p>
+                <a 
+                  href="https://www.instagram.com/apltattoo/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#ba181b] hover:text-[#ba181b]/80 transition-colors text-sm font-medium"
+                >
+                  Seguir perfil →
+                </a>
+              </div>
+            </div>
+
+            {/* Email/Outro contato */}
+            <div className="bg-[#640d14]/50 backdrop-blur-sm border border-[#ba181b]/30 rounded-2xl p-6 hover:border-[#ba181b] transition-all group sm:col-span-2 lg:col-span-1 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-14 h-14 bg-[#ba181b]/20 rounded-full flex items-center justify-center mb-4 border border-[#ba181b] group-hover:bg-[#ba181b] transition-colors">
+                  <svg className="w-7 h-7 text-[#e5e5e5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold text-[#e5e5e5] mb-3">LOCALIZAÇÃO</h3>
+                <p className="text-[#e5e5e5]/70 text-sm leading-relaxed">
+                  Av. Barrassano<br />
+                  Cidade Nova, Manaus - AM
+                </p>
+                <a 
+                  href="#localizacao"
+                  className="mt-3 text-[#ba181b] hover:text-[#ba181b]/80 transition-colors text-sm font-medium"
+                >
+                  Ver mapa →
+                </a>
               </div>
             </div>
           </div>
@@ -596,74 +664,104 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#640d14] to-transparent"></div>
       </section>
 
-      {/* Sobre Section */}
-      <section id="sobre" className="py-12 md:py-20 lg:py-24 bg-[#0a0908] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 md:mb-12 lg:mb-16 animate-fade-in-up">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 tracking-tight">
-              <span className="text-[#e5e5e5]">SOBRE O </span>
-              <span className="text-[#ba181b]">ESTÚDIO</span>
-            </h2>
-            <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-transparent via-[#640d14] to-transparent mx-auto"></div>
-          </div>
+      {/* Sobre Section - Versão Atualizada e Mais Elegante */}
+<section id="sobre" className="py-16 md:py-24 lg:py-32 bg-[#0a0908] relative overflow-hidden">
+  <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+    <div 
+      className="absolute inset-0"
+      style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ba181b' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      }}
+    />
+  </div>
 
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className="space-y-4 md:space-y-6 animate-fade-in-left order-2 md:order-1">
-              <p className="text-base md:text-lg text-[#e5e5e5]/80 leading-relaxed">
-                Na <span className="text-[#e5e5e5] font-bold">APOLLO TATTOO</span>, somos mais do que um estúdio - 
-                somos uma equipe dedicada a transformar suas ideias em arte permanente de alta qualidade.
-              </p>
-              <p className="text-base md:text-lg text-[#e5e5e5]/80 leading-relaxed">
-                Com anos de experiência e paixão pela arte corporal, criamos tatuagens únicas que contam histórias 
-                e expressam personalidades. Cada trabalho é executado com precisão técnica e sensibilidade artística.
-              </p>
+  <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+    <div className="text-center mb-12 md:mb-16 lg:mb-20">
+      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight">
+        <span className="text-[#e5e5e5]">CONHEÇA O </span>
+        <span className="bg-gradient-to-r from-[#ba181b] to-[#640d14] bg-clip-text text-transparent">APOLLO</span>
+      </h2>
+      <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#ba181b] to-transparent mx-auto mt-6"></div>
+    </div>
 
-              <div className="grid grid-cols-3 gap-3 md:gap-6 pt-6 md:pt-8">
-                <div className="text-center p-4 md:p-6 bg-[#640d14] rounded-2xl border border-[#ba181b]/30 hover:border-[#ba181b] transition-all group">
-                  <div className="text-3xl md:text-4xl font-black text-[#ba181b] mb-1 md:mb-2 group-hover:scale-110 transition-transform">500+</div>
-                  <div className="text-xs md:text-sm text-[#e5e5e5]/70">Tattoos</div>
-                </div>
-                <div className="text-center p-4 md:p-6 bg-[#640d14] rounded-2xl border border-[#ba181b]/30 hover:border-[#ba181b] transition-all group">
-                  <div className="text-3xl md:text-4xl font-black text-[#ba181b] mb-1 md:mb-2 group-hover:scale-110 transition-transform">5+</div>
-                  <div className="text-xs md:text-sm text-[#e5e5e5]/70">Anos</div>
-                </div>
-                <div className="text-center p-4 md:p-6 bg-[#640d14] rounded-2xl border border-[#ba181b]/30 hover:border-[#ba181b] transition-all group">
-                  <div className="text-3xl md:text-4xl font-black text-[#ba181b] mb-1 md:mb-2 group-hover:scale-110 transition-transform">100%</div>
-                  <div className="text-xs md:text-sm text-[#e5e5e5]/70">Qualidade</div>
-                </div>
-              </div>
+    <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      {/* Foto do tatuador - lado esquerdo em desktop */}
+      <div className="lg:col-span-5 relative animate-fade-in-left order-1">
+        <div className="relative mx-auto max-w-[380px] lg:max-w-none">
+          {/* Efeito de glow / moldura externa */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#ba181b]/30 via-[#640d14]/20 to-transparent rounded-full blur-2xl opacity-70"></div>
+          
+          {/* Container da foto */}
+          <div className="relative rounded-full overflow-hidden border-4 border-[#ba181b]/40 hover:border-[#ba181b] transition-all duration-500 group shadow-2xl shadow-black/60">
+            <div className="aspect-square relative">
+              <Image
+                src="/imagens/apolloperfil2.png"
+                alt="Apollo - Tatuador Apollo Tattoo"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 1024px) 80vw, 40vw"
+                priority
+              />
             </div>
-
-            <div className="animate-fade-in-right order-1 md:order-2">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#640d14] to-[#ba181b] rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                <div className="relative bg-[#640d14] p-6 md:p-8 rounded-2xl border-2 border-[#ba181b]/40 hover:border-[#ba181b] transition-all">
-                  <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#e5e5e5]">Nossos Diferenciais</h3>
-                  <ul className="space-y-3 md:space-y-4">
-                    {[
-                      'Artistas experientes e talentosos',
-                      'Ambiente higienizado e seguro',
-                      'Materiais descartáveis e esterilizados',
-                      'Atendimento personalizado',
-                      'Variedade de estilos e técnicas',
-                      'Acompanhamento pós-tattoo'
-                    ].map((item, index) => (
-                      <li key={index} className="flex items-start gap-3 group/item">
-                        <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-[#ba181b]/20 border border-[#ba181b] flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-[#ba181b] transition-colors">
-                          <svg className="w-2.5 h-2.5 md:w-3 md:h-3 text-[#e5e5e5] group-hover/item:text-[#0a0908] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <span className="text-[#e5e5e5]/80 group-hover/item:text-[#e5e5e5] transition-colors text-sm md:text-base">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+            
+            {/* Overlay sutil com nome */}
+            <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-4">
+              <span className="text-[#e5e5e5] font-bold tracking-wider text-lg drop-shadow-md">
+                APOLLO
+              </span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Conteúdo textual - lado direito em desktop */}
+      <div className="lg:col-span-7 space-y-6 md:space-y-8 order-2">
+        <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#e5e5e5] leading-tight">
+          Arte que conta sua história
+        </h3>
+        
+        <div className="space-y-5 text-lg md:text-xl text-[#e5e5e5]/85 leading-relaxed">
+          <p>
+            Sou <strong className="text-[#ba181b] font-bold">Apollo</strong>, tatuador há mais de {new Date().getFullYear() - 2018} anos, apaixonado por criar peças únicas, limpas e com significado profundo.
+          </p>
+          
+          <p>
+            No <strong>Apollo Tattoo</strong> cada projeto é tratado como uma obra de arte exclusiva: do primeiro esboço até o último detalhe na pele. 
+            Trabalho com foco em realismo, blackwork, neotradicional, geométrico e composição personalizada.
+          </p>
+          
+          <p className="font-medium italic text-[#ba181b]/90">
+            "Minha missão é transformar sua ideia em uma tatuagem que você terá orgulho de carregar pelo resto da vida."
+          </p>
+        </div>
+
+        {/* Assinatura + selo de qualidade */}
+        <div className="pt-6 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
+          <div className="flex items-center gap-4">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-[#640d14] to-[#ba181b] flex items-center justify-center text-white font-black text-2xl md:text-3xl shadow-lg">
+              A
+            </div>
+            <div>
+              <div className="text-xl md:text-2xl font-black tracking-tight">Apollo</div>
+              <div className="text-[#e5e5e5]/60 text-sm md:text-base">Proprietário & Tatuador Principal</div>
+            </div>
+          </div>
+
+          <div className="flex gap-6 text-sm md:text-base">
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-black text-[#ba181b]">500+</div>
+              <div className="text-[#e5e5e5]/60">Tatuagens realizadas</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-black text-[#ba181b]">100%</div>
+              <div className="text-[#e5e5e5]/60">Higienização premium</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Process Section */}
       <section className="py-12 md:py-20 lg:py-24 bg-[#0a0908]">
