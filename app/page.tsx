@@ -453,7 +453,7 @@ export default function Home() {
                     </div>
 
                     <h3 className="text-2xl md:text-4xl font-black text-[#e5e5e5] mb-4">
-                      FALE DIRETO COM O TATUADOR
+                      FALE DIRETO COM O PROFISSIONAL
                     </h3>
                     
                     <p className="text-base md:text-xl text-[#e5e5e5]/70 mb-8 max-w-2xl mx-auto leading-relaxed">
